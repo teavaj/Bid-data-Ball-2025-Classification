@@ -1,0 +1,15 @@
+/data
+/2023-Pycon-Polars-main/
+eda.ipynb
+
+/__pycache__
+/.clj-kondo
+/.idea
+.idea
+/.lsp
+/.portal
+.vscode
+
+/notebooks/*
+!/notebooks/classification_PlayType*
+!/notebooks/classification*

@@ -1,0 +1,20 @@
+name: Mirror Branch to Public Repo
+on:
+  push:
+    branches: [public]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: public
+
+      - name: Push to public repo
+        run: |
+          git remote add Bid-data-Ball-2025-Classification https://github.com/teavaj/Bid-data-Ball-2025-Classification
+          git push Bid-data-Ball-2025-Classification public:main --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
